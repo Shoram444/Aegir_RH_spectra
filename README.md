@@ -17,4 +17,10 @@ In order to provide the required input for Falaise simulation - the initial mome
 
 # INSTALLATION AND USAGE
 
+### Installation and set-up
+
+0. (Optional, if you haven't done this already :-) ) Load Falaise v5.x: `source /sps/nemo/sw/snswmgr/snswmgr.conf && snswmgr_load_setup falaise@5.1.2`
 1. Build the library using: `./build.bash`
+2. In the `simu.conf` file that you use for `flsimualte` application, you must specify the path to `lib64`, an example is shown in the `Example_simu.conf` example file in this repository.
+3. In the `generators.conf` file you must specify the path to the input data. An example is shown in the `Example_generators.conf` file.
+4. In the `variant.profile` file you must specify the path to `generators.conf` file. Again an example is provided in `Example_variant.profile` file.  

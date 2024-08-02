@@ -20,7 +20,7 @@ generator = "real_flat_source_strip_3_bulk"
 
 [registry="primary_events"]
 generator = "aegir"
-generator/if_aegir/generators_file = "_tmp_work.d/exaegir_test1/generators.conf"
+generator/if_aegir/generators_file = "/pbs/home/m/mpetro/sps_mpetro/Projects/PhD/Aegir_RH_spectra/Examle_generators.conf"
 generator/if_aegir/selected = "RH"
 
 [registry="simulation"]
