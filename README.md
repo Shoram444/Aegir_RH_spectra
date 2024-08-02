@@ -16,11 +16,13 @@ In order to provide the required input for Falaise simulation - the initial mome
 3. From the cone created by drawing a dircle around the first electron's direction, where the size of the cone is given by $\theta_{diff}$ a random direction is chosen as the direction of the **second** electron. 
 
 # INSTALLATION AND USAGE
-
-### Installation and set-up
+(There's a lot of paths that need to be specified, this can probably be done simpler and better but I haven't bothered :( )
 
 0. (Optional, if you haven't done this already :-) ) Load Falaise v5.x: `source /sps/nemo/sw/snswmgr/snswmgr.conf && snswmgr_load_setup falaise@5.1.2`
 1. Build the library using: `./build.bash`
 2. In the `simu.conf` file that you use for `flsimualte` application, you must specify the path to `lib64`, an example is shown in the `Example_simu.conf` example file in this repository.
-3. In the `generators.conf` file you must specify the path to the input data. An example is shown in the `Example_generators.conf` file.
-4. In the `variant.profile` file you must specify the path to `generators.conf` file. Again an example is provided in `Example_variant.profile` file.  
+3. In the `generators.conf` file you **must specify the path to the input data and desired k factor!!** An example is shown in the `Example_generators.conf` file.
+4. In the `variant.profile` file you must specify the path to `generators.conf` file and the name of the generator "RH". Again an example is provided in `Example_variant.profile` file.  
+5. Use `flsimulate` as usual with the config of `simu.conf`. That's it! :) 
+
+(Optionally the `variant.profile` can be created using the `flsimulate-configure` application. Here, in the **Primary events** tab you must select the `aegir` "value". In the "generators_file" row you need to specify the path to the `generators.conf` file which includes the path to the input data and k factor. In the "selected" row you need to specify the name of the generator "RH".) 
