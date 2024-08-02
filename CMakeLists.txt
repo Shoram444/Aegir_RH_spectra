@@ -38,11 +38,6 @@ add_library(exaegir SHARED
 target_link_libraries(exaegir Falaise::Falaise ${ROOT_LIBRARIES})
 
 set_target_properties(exaegir PROPERTIES INSTALL_RPATH_USE_LINK_PATH 1)
-# if(UNIX AND NOT APPLE)
-#   set_target_properties(exaegir
-#     PROPERTIES INSTALL_RPATH "\$ORIGIN/../${CMAKE_INSTALL_LIBDIR}"
-#     )
-# endif()
 
 # Install targets:
 install(TARGETS exaegir DESTINATION ${CMAKE_INSTALL_LIBDIR})
@@ -65,5 +60,3 @@ install(TARGETS runexaegir DESTINATION "${CMAKE_INSTALL_BINDIR}")
 install(DIRECTORY resources/ DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/exaegir-${ExAegirVersion}")
 
 install(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/exaegir-config" DESTINATION "${CMAKE_INSTALL_BINDIR}")
-
-  # end

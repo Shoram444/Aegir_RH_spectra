@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+#################################
+###### CHANGE THE PATH HERE 
+#################################
+
+exaegirLibDir=$(/sps/nemo/scratch/mpetro/Projects/PhD/Aegir_RH_spectra/_install.d/bin/exaegir-config --libdir)
+
+#################################
+#################################
+
 label="exaegir_test1"
 step1=1
 work_dir=""
@@ -51,7 +60,7 @@ if [ $? -ne 0 ]; then
     my_exit 1 "flsimulate is not available! Abort!"
 fi
 
-exaegirLibDir=$(/pbs/home/m/mpetro/sps_mpetro/Projects/PhD/Aegir_RH_spectra/_install.d/bin/exaegir-config --libdir)
+
 
 cp ${cfg_dir}/simu_1.conf ${FLWORKDIR}/
 cp ${cfg_dir}/generators.conf ${FLWORKDIR}/generators.conf
@@ -88,16 +97,5 @@ if [ $? -ne 0 ]; then
     cat ${FLWORKDIR}/flsim1.log
     my_exit 1 "flsimulate failed! Abort!"	
 fi
-
-# if [ ${with_visu} -eq 1 ]; then
-#     echo >&2 "[info] Running flvisualize..."
-#     flvisualize \
-# 	--variant-profile ${FLWORKDIR}/simu-1.vprofile \
-# 	--input-file ${FLWORKDIR}/test1-exaegir.brio \
-# 	--focus-on-roi \
-# 	--show-simulated-vertex 1 \
-# 	--show-simulated-tracks 1 \
-# 	--show-simulated-hits 1
-# fi
 
 my_exit 0
